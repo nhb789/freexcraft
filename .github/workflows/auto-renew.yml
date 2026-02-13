@@ -27,10 +27,25 @@ jobs:
     - name: Run renewal script
       run: python renew.py
       
+    - name: Upload screenshots
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: screenshots-${{ github.run_number }}
+        path: |
+          page_loaded.png
+          after_fill.png
+          final_result.png
+        retention-days: 3
+        if-no-files-found: ignore
+      
     - name: Upload logs
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: renewal-logs-${{ github.run_number }}
-        path: renewal.log
+        path: |
+          renewal.log
+          page_debug.html
         retention-days: 7
+        if-no-files-found: ignore
