@@ -2,8 +2,10 @@ name: Auto Renew Server
 
 on:
   schedule:
-    # 每小时运行一次（在每小时的第5分钟）
-    - cron: '5 * * * *'
+    # 每小时运行两次，增加执行机会
+    # GitHub Actions 的 scheduled 可能延迟，多设几个时间点
+    - cron: '5 * * * *'   # 每小时第5分钟
+    - cron: '35 * * * *'  # 每小时第35分钟
   workflow_dispatch:  # 允许手动触发
 
 jobs:
