@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 # 配置信息
 URL = "https://freexcraft.com/external-renew"
-SUBDOMAIN = "laohu.xmania.me"
+SUBDOMAIN = "nhb789.xmania.me"
 TIMEOUT = 30000  # 30秒超时
 
 
