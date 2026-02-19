@@ -5,6 +5,7 @@ on:
     # 每小时运行两次，增加执行机会
     # GitHub Actions 的 scheduled 可能延迟，多设几个时间点
     - cron: '0 * * * *'   # 每小时
+    - cron: '45 * * * *'   # 每小时
   workflow_dispatch:  # 允许手动触发
 
 jobs:
